@@ -1,6 +1,7 @@
 # ChatBot
 #Step one install the requirements.txt with 
 pip install -r requirements.txt --> This will install the libaries needed
+Use this link to help set up .venu your virtual enviroment https://code.visualstudio.com/docs/python/environments#:~:text=Using%20the%20Create%20Environment%20command,environment%20types%3A%20Venv%20or%20Conda.
 
 #Step two 
 Make a .env file and add this line GROQ_API_KEY = YOURAPIKEY
