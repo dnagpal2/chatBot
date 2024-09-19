@@ -6,6 +6,14 @@ Use this link to help set up .venu your virtual enviroment https://code.visualst
 #Step two 
 Make a .env file and add this line GROQ_API_KEY = YOURAPIKEY
 Replace YOURAPIKEY with your groc key
+Also add your own DB Cred
+EX --> 
+DB_USER=username
+DB_PASSWORD=password
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=DBname
+
 
 #Step three
 To run this code you need your own virtual enviroment 
