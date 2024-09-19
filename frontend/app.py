@@ -4,6 +4,11 @@ import os
 import json
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from backend.chat_manager import ChatManager
+from backend.db_config import engine
+from backend.models import Base
+
+# Create database tables
+Base.metadata.create_all(bind=engine)
 
 def load_models():
     with open('models/models.json', 'r') as f:
@@ -42,6 +47,12 @@ def main():
     if st.button("Clear Chat"):
         st.session_state.chat_manager.clear_history()
         st.rerun()
+
+    # Display all prompts
+    if st.button("Show All Prompts"):
+        prompts = st.session_state.chat_manager.get_prompts()
+        for prompt in prompts:
+            st.write(f"{prompt.timestamp}: [{prompt.role}] {prompt.content}")
 
 if __name__ == "__main__":
     main()
